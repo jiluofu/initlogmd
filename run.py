@@ -31,11 +31,14 @@ date = datetime.datetime.strptime(date, '%Y-%m-%d')
 # print(d2)
 
 weekDay = date.weekday();
+print(weekDay)
 
 
+content_log = ''
+content_log_read = ''
+content_log_workout = ''
 
-
-for i in range(0, 8):
+for i in range(6, -1, -1):
     
     newDay = date + datetime.timedelta(days = i - weekDay)
     newNum = init.getNumByDate(newDay.strftime('%Y-%m-%d'))
@@ -46,8 +49,22 @@ for i in range(0, 8):
     # print(newWeekDay)
     init.makeArt(newNum, newDay, newWeekDay)
 
+    
+    content_log = content_log + init.makeLogContent(newDay, newWeekDay)
+    content_log_read = content_log_read + init.makeLogReadContent(newDay, newWeekDay)
+    content_log_workout = content_log_workout + init.makeLogWorkoutContent(newDay, newWeekDay)
 
-# def makeArt(num):
-#     print(111)
+    
+f = open(init.output_path_log, 'w')
+f.write(content_log)
+f.close()
+
+f = open(init.output_path_log_read, 'w')
+f.write(content_log_read)
+f.close()
+
+f = open(init.output_path_log_workout, 'w')
+f.write(content_log_workout)
+f.close()
 
 
