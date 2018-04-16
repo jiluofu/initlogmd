@@ -69,6 +69,8 @@ weekDayDict = {
 
 }
 
+tplKanTuShuoHua = '\n**拍摄时间：2018.12.17**\n\n**拍摄地点：**\n';
+
 
 
 def getNumByDate(date):
@@ -119,7 +121,11 @@ def makeArt(num, day, weekDay):
     tplContent = f.read()
     f.close()
     tpl = Template(tplContent)
-    content = tpl.substitute(num = num, day = day.strftime('%Y.%m.%d'), weekDay = weekDay)
+    if weekDay == 1:
+        # 周一看图说话，添加日期和地点模板
+        content = tpl.substitute(num = num, day = day.strftime('%Y.%m.%d'), weekDay = weekDay, tplKanTuShuoHua = tplKanTuShuoHua)
+    else:
+        content = tpl.substitute(num = num, day = day.strftime('%Y.%m.%d'), weekDay = weekDay, tplKanTuShuoHua = '')
     # print(content)
 
     f = open(output_path_art + os.path.sep + title + '.md', 'w')
