@@ -51,7 +51,8 @@ for i in range(6, -1, -1):
 
     
     content_log = content_log + init.makeLogContent(newDay, newWeekDay)
-    content_log_read = content_log_read + init.makeLogReadContent(newDay, newWeekDay)
+    if i < 5:
+        content_log_read = content_log_read + init.makeLogReadContent(newDay, newWeekDay)
     content_log_workout = content_log_workout + init.makeLogWorkoutContent(newDay, newWeekDay)
 
     
