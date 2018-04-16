@@ -69,7 +69,8 @@ weekDayDict = {
 
 }
 
-tplKanTuShuoHua = '\n**拍摄时间：2018.12.17**\n\n**拍摄地点：**\n';
+tplKanTuShuoHua = '\n**拍摄时间：2018.12.17**\n\n**拍摄地点：**\n'
+tpl5Slogan = '\n***有的小朋友对我说不想上小学，因为减法太难了，其实小学里有趣的事可多了，包括减法在内。***\n'
 
 
 
@@ -123,9 +124,12 @@ def makeArt(num, day, weekDay):
     tpl = Template(tplContent)
     if weekDay == 1:
         # 周一看图说话，添加日期和地点模板
-        content = tpl.substitute(num = num, day = day.strftime('%Y.%m.%d'), weekDay = weekDay, tplKanTuShuoHua = tplKanTuShuoHua)
+        content = tpl.substitute(num = num, day = day.strftime('%Y.%m.%d'), weekDay = weekDay, tplKanTuShuoHua = tplKanTuShuoHua, tpl5Slogan = '')
+    elif weekDay == 5:
+        # 周五上小学，加slogan模板
+        content = tpl.substitute(num = num, day = day.strftime('%Y.%m.%d'), weekDay = weekDay, tplKanTuShuoHua = '', tpl5Slogan = tpl5Slogan)
     else:
-        content = tpl.substitute(num = num, day = day.strftime('%Y.%m.%d'), weekDay = weekDay, tplKanTuShuoHua = '')
+        content = tpl.substitute(num = num, day = day.strftime('%Y.%m.%d'), weekDay = weekDay, tplKanTuShuoHua = '', tpl5Slogan = '')
     # print(content)
 
     f = open(output_path_art + os.path.sep + title + '.md', 'w')
