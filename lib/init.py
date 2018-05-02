@@ -9,35 +9,35 @@ from string import Template
 startNum = 760
 startNumDate = '2018-03-08'
 
-d1Num = 94
-d1Date = '2018-04-09'
+d1Num = 97
+d1Date = '2018-05-07'
 d1Cate = '看图说话'
 
-d2Num = 392
-d2Date = '2018-04-10'
+d2Num = 405
+d2Date = '2018-05-08'
 d2Cate = '与喵共舞'
 
-d3Num = 61
-d3Date = '2018-04-11'
+d3Num = 65
+d3Date = '2018-05-09'
 d3Cate = '读书'
 
-d4Num = 86
-d4Date = '2018-04-19'
+d4Num = 88
+d4Date = '2018-05-17'
 d4Cate = '朝花夕拾'
-d4Num1 = 38
-d4Date1 = '2018-04-12'
+d4Num1 = 40
+d4Date1 = '2018-05-10'
 d4Cate1 = '读历史'
 
-d5Num = 3
-d5Date = '2018-04-13'
+d5Num = 7
+d5Date = '2018-05-11'
 d5Cate = '小学'
 
-d6Num = 393
-d6Date = '2018-04-14'
+d6Num = 406
+d6Date = '2018-05-12'
 d6Cate = '与喵共舞'
 
-d7Num = 394
-d7Date = '2018-04-15'
+d7Num = 407
+d7Date = '2018-05-13'
 d7Cate = '与喵共舞'
 
 
@@ -71,6 +71,8 @@ weekDayDict = {
 
 tplKanTuShuoHua = '\n**拍摄时间：2018.12.17**\n\n**拍摄地点：**\n'
 tpl5Slogan = '\n***有的小朋友对我说不想上小学，因为减法太难了，其实小学里有趣的事可多了，包括减法在内。***\n'
+
+tplLogVipkid = '\n* vipkid'
 
 
 
@@ -142,8 +144,14 @@ def makeLogContent(day, weekDay):
     tplContent = f.read()
     f.close()
 
+    tplLogVipkidContent = ''
+    if (weekDay == 1 or weekDay == 3 or weekDay == 5):
+
+        tplLogVipkidContent = tplLogVipkid
+
+
     tpl = Template(tplContent)
-    content = tpl.substitute(day = day.strftime('%Y.%m.%d'), weekDay = weekDayDict[str(weekDay)]) + '\n\n'
+    content = tpl.substitute(day = day.strftime('%Y.%m.%d'), weekDay = weekDayDict[str(weekDay)], tplLogVipkid = tplLogVipkidContent) + '\n\n'
     
     return content
 
