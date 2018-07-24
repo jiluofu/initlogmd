@@ -16,6 +16,9 @@ if len(sys.argv) > 1:
 else:
     date = input('请输入日期，xxxx-xx-xx\n>  ')
 
+runType = 'all'
+if len(sys.argv) > 2:
+    runType = sys.argv[2]
 
 print(date)
 
@@ -47,7 +50,8 @@ for i in range(6, -1, -1):
     if newWeekDay == 8:
         newWeekDay = 1;
     # print(newWeekDay)
-    init.makeArt(newNum, newDay, newWeekDay)
+    if runType == 'all' or runType == 'art':
+        init.makeArt(newNum, newDay, newWeekDay)
 
     
     content_log = content_log + init.makeLogContent(newDay, newWeekDay)
@@ -55,17 +59,17 @@ for i in range(6, -1, -1):
         content_log_read = content_log_read + init.makeLogReadContent(newDay, newWeekDay)
     content_log_workout = content_log_workout + init.makeLogWorkoutContent(newDay, newWeekDay)
 
-    
-f = open(init.output_path_log, 'w')
-f.write(content_log)
-f.close()
+if runType == 'all' or runType == 'log':  
+    f = open(init.output_path_log, 'w')
+    f.write(content_log)
+    f.close()
 
-f = open(init.output_path_log_read, 'w')
-f.write(content_log_read)
-f.close()
+    f = open(init.output_path_log_read, 'w')
+    f.write(content_log_read)
+    f.close()
 
-f = open(init.output_path_log_workout, 'w')
-f.write(content_log_workout)
-f.close()
+    f = open(init.output_path_log_workout, 'w')
+    f.write(content_log_workout)
+    f.close()
 
 
