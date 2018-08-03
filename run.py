@@ -14,9 +14,9 @@ except:
 if len(sys.argv) > 1:
     date = sys.argv[1]
 else:
-    date = input('请输入日期，xxxx-xx-xx\n>  ')
+    date = input('日志，请输入日期，xxxx-xx-xx\n文章，请输入日期，xxxx-xx-xx art\n>  ')
 
-runType = 'all'
+runType = 'log'
 if len(sys.argv) > 2:
     runType = sys.argv[2]
 
