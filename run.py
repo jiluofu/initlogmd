@@ -40,6 +40,7 @@ print(weekDay)
 content_log = ''
 content_log_read = ''
 content_log_workout = ''
+content_log_skip = ''
 
 for i in range(6, -1, -1):
     
@@ -57,6 +58,7 @@ for i in range(6, -1, -1):
     content_log = content_log + init.makeLogContent(newDay, newWeekDay)
     if i < 5:
         content_log_read = content_log_read + init.makeLogReadContent(newDay, newWeekDay)
+        content_log_skip = content_log_skip + init.makeLogSkipContent(newDay, newWeekDay)
     content_log_workout = content_log_workout + init.makeLogWorkoutContent(newDay, newWeekDay)
 
 if runType == 'all' or runType == 'log':  
@@ -66,6 +68,10 @@ if runType == 'all' or runType == 'log':
 
     f = open(init.output_path_log_read, 'w')
     f.write(content_log_read)
+    f.close()
+
+    f = open(init.output_path_log_skip, 'w')
+    f.write(content_log_skip)
     f.close()
 
     f = open(init.output_path_log_workout, 'w')

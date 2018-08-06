@@ -49,6 +49,7 @@ tpl_path_art = tpl_path + os.path.sep + 'art.tpl'
 tpl_path_log = tpl_path + os.path.sep + 'log.tpl'
 tpl_path_log_read = tpl_path + os.path.sep + 'log_read.tpl'
 tpl_path_log_workout = tpl_path + os.path.sep + 'log_workout'
+tpl_path_log_skip = tpl_path + os.path.sep + 'log_skip.tpl'
 
 
 output_path = file_parent_path + os.path.sep + 'output'
@@ -56,6 +57,7 @@ output_path_art = output_path + os.path.sep + 'art'
 output_path_log = output_path + os.path.sep + 'log.md'
 output_path_log_workout = output_path + os.path.sep + 'log_workout.md'
 output_path_log_read = output_path + os.path.sep + 'log_read.md'
+output_path_log_skip = output_path + os.path.sep + 'log_skip.md'
 
 weekDayDict = {
     
@@ -174,6 +176,17 @@ def makeLogWorkoutContent(day, weekDay):
 
     tpl = Template(tplContent)
     content = tpl.substitute(day = day.strftime('%Y.%m.%d'), weekDay = weekDayDict[str(weekDay)]) + '\n\n'
+    
+    return content
+
+def makeLogSkipContent(day, weekDay):
+
+    f = open(tpl_path_log_skip)
+    tplContent = f.read()
+    f.close()
+
+    tpl = Template(tplContent)
+    content = tpl.substitute(day = day.strftime('%Y.%m.%d'), weekDay = weekDayDict[str(weekDay)]) + ''
     
     return content
 
