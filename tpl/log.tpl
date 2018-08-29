@@ -1,8 +1,9 @@
 ## ${day}（${weekDay}）
 * 晴，70
-* 学前班${tplLogVipkid}
-* 练琴
+* 上学${tplLogVipkid}
 * 跳绳
+* 练琴
+* 作业
 * 用牙线
 * 讲书
 * 睡觉
