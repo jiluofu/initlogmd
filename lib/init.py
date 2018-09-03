@@ -46,7 +46,7 @@ d7Cate = '与喵共舞'
 file_parent_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir) + os.path.sep)
 tpl_path = file_parent_path + os.path.sep + 'tpl'
 tpl_path_art = tpl_path + os.path.sep + 'art.tpl'
-tpl_path_log = tpl_path + os.path.sep + 'log.tpl'
+tpl_path_log = tpl_path + os.path.sep + 'log'
 tpl_path_log_read = tpl_path + os.path.sep + 'log_read.tpl'
 tpl_path_log_workout = tpl_path + os.path.sep + 'log_workout'
 tpl_path_log_skip = tpl_path + os.path.sep + 'log_skip.tpl'
@@ -142,18 +142,12 @@ def makeArt(num, day, weekDay):
 
 def makeLogContent(day, weekDay):
 
-    f = open(tpl_path_log)
+    f = open(tpl_path_log + str(weekDay) + '.tpl')
     tplContent = f.read()
     f.close()
 
-    tplLogVipkidContent = ''
-    if (weekDay == 1 or weekDay == 3 or weekDay == 5):
-
-        tplLogVipkidContent = tplLogVipkid
-
-
     tpl = Template(tplContent)
-    content = tpl.substitute(day = day.strftime('%Y.%m.%d'), weekDay = weekDayDict[str(weekDay)], tplLogVipkid = tplLogVipkidContent) + '\n\n'
+    content = tpl.substitute(day = day.strftime('%Y.%m.%d'), weekDay = weekDayDict[str(weekDay)]) + '\n\n'
     
     return content
 
