@@ -180,7 +180,7 @@ def pubNotes():
     for i in range(0, len(noteArr)):
         pattern = r'([^\.]*\.)*md$'
         if re.match(pattern, noteArr[i]):
-            title = noteArr[i].replace('.md', '') + '*'
+            title = noteArr[i].replace('.md', '').replace('~', '~*')
             file_path = note_file_path + os.path.sep + noteArr[i]
             fp = open(file_path, 'r', encoding='utf-8')
             content = fp.read()
