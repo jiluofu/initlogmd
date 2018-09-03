@@ -34,7 +34,7 @@ date = datetime.datetime.strptime(date, '%Y-%m-%d')
 # print(d2)
 
 weekDay = date.weekday();
-print(weekDay)
+
 
 
 content_log = ''
