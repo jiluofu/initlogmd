@@ -78,4 +78,7 @@ if runType == 'all' or runType == 'log':
     f.write(content_log_workout)
     f.close()
 
-
+if runType == 'read':
+    f = open(init.output_path_log_read, 'w')
+    f.write(content_log_read)
+    f.close()
