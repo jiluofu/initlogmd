@@ -1,1 +1,1 @@
-${day} | ${weekDay} | 跳绳<br>压腿
+${day} | ${weekDay} | 跳绳<br>芭蕾基本功
