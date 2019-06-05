@@ -13,31 +13,31 @@ d1Num = 133
 d1Date = '2019-02-11'
 d1Cate = '看图说话'
 
-d2Num = 537
-d2Date = '2019-02-12'
+d2Num = 577
+d2Date = '2019-05-07'
 d2Cate = '与喵共舞'
 
-d3Num = 103
-d3Date = '2019-02-13'
+d3Num = 114
+d3Date = '2019-05-08'
 d3Cate = '读书'
 
-d4Num = 106
-d4Date = '2019-02-14'
+d4Num = 112
+d4Date = '2019-05-16'
 d4Cate = '朝花夕拾'
-d4Num1 = 59
-d4Date1 = '2019-02-21'
+d4Num1 = 64
+d4Date1 = '2019-05-09'
 d4Cate1 = '读历史'
 
-d5Num = 44
-d5Date = '2019-02-15'
+d5Num = 54
+d5Date = '2019-05-11'
 d5Cate = '小学'
 
-d6Num = 538
-d6Date = '2019-02-16'
+d6Num = 575
+d6Date = '2019-05-04'
 d6Cate = '与喵共舞'
 
-d7Num = 539
-d7Date = '2019-02-17'
+d7Num = 576
+d7Date = '2019-05-05'
 d7Cate = '与喵共舞'
 
 
@@ -90,32 +90,32 @@ def makeArt(num, day, weekDay):
     cateTitle = ''
     if weekDay == 1:
         cate = d1Cate
-        cateNum = d1Num + (day - datetime.datetime.strptime(d1Date, '%Y-%m-%d')).days / 7
+        cateNum = d1Num + int((day - datetime.datetime.strptime(d1Date, '%Y-%m-%d')).days / 7)
     elif weekDay == 2:
         cate = d2Cate
-        cateNum = d2Num + ((day - datetime.datetime.strptime(d2Date, '%Y-%m-%d')).days / 7) * 3
+        cateNum = d2Num + int((day - datetime.datetime.strptime(d2Date, '%Y-%m-%d')).days / 7) * 3
     elif weekDay == 3:
         cate = d3Cate
-        cateNum = d3Num + (day - datetime.datetime.strptime(d3Date, '%Y-%m-%d')).days / 7   
+        cateNum = d3Num + int((day - datetime.datetime.strptime(d3Date, '%Y-%m-%d')).days / 7)   
         cateTitle = '《》'
     elif weekDay == 4:
 
         if ((day - datetime.datetime.strptime(d4Date, '%Y-%m-%d')).days / 7) % 2 == 0:
             cate = d4Cate
-            cateNum = d4Num + (day - datetime.datetime.strptime(d4Date, '%Y-%m-%d')).days / 14
+            cateNum = d4Num + int((day - datetime.datetime.strptime(d4Date, '%Y-%m-%d')).days / 14)
         else:
             cate = d4Cate1
-            cateNum = d4Num1 + (day - datetime.datetime.strptime(d4Date1, '%Y-%m-%d')).days / 14
+            cateNum = d4Num1 + int((day - datetime.datetime.strptime(d4Date1, '%Y-%m-%d')).days / 14)
     elif weekDay == 5:
         cate = d5Cate
-        cateNum = d5Num + (day - datetime.datetime.strptime(d5Date, '%Y-%m-%d')).days / 7   
+        cateNum = d5Num + int((day - datetime.datetime.strptime(d5Date, '%Y-%m-%d')).days / 7)   
     elif weekDay == 6:
         cate = d6Cate
-        cateNum = d6Num + ((day - datetime.datetime.strptime(d6Date, '%Y-%m-%d')).days / 7 ) * 3
+        cateNum = d6Num + int((day - datetime.datetime.strptime(d6Date, '%Y-%m-%d')).days / 7 ) * 3
         cateTitle = '周末活动'
     elif weekDay == 7:
         cate = d7Cate
-        cateNum = d7Num + ((day - datetime.datetime.strptime(d7Date, '%Y-%m-%d')).days / 7 ) * 3
+        cateNum = d7Num + int((day - datetime.datetime.strptime(d7Date, '%Y-%m-%d')).days / 7 ) * 3
         cateTitle = '周末活动'
 
     tpl  = Template('${num}.${cate}${cateNum}~${cateTitle}')
