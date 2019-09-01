@@ -189,10 +189,26 @@ def pubNotes():
             time.sleep(1)
             os.remove(file_path)
 
+def fetch_notes(root_path, notebook_id, cookie):
+
+    headers_notes = {
+        'Host': 'www.jianshu.com',
+        'Origin': 'https://www.jianshu.com',
+        'Referer': 'https://www.jianshu.com/writer',
+        'User-Agent': agent,
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Cookie': 'read_mode=day; locale=zh-CN; default_font=font1; __yadk_uid=XQyGPOzkWKCP8ofJfoNbjuE5ytSOZxw0; Hm_lvt_0c0e9d9b1e7d617b3e6842e85b9fb068=1567301105,1567327851,1567328444,1567338882; remember_user_token=W1s1MTAwMV0sIiQyYSQxMCRXeDNPa2hvOWIxUXlVWjV6Znlnc0xPIiwiMTU2NzM3NjIyNi4yNDQwOTU2Il0%3D--4c9a6463bae217a4a888938856df72caf49b6724; _m7e_session_core=f3a7cccfb2a027e053253d2cf817403a; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%2216ce7515f886e6-0551eea721aaca-38637701-2073600-16ce7515f898bd%22%2C%22%24device_id%22%3A%2216ce7515f886e6-0551eea721aaca-38637701-2073600-16ce7515f898bd%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%22%22%7D; Hm_lpvt_0c0e9d9b1e7d617b3e6842e85b9fb068=1567376519'
+
+    }
+    url = 'https://www.jianshu.com/author/notes/52451432/content'
+    res = session.get(url, headers=headers).text
+    print(res)
         
 
 initial()
-pubNotes()
+# pubNotes() 
+fetch_notes('', '', '')
+
 
 
     
