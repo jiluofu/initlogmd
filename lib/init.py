@@ -9,35 +9,35 @@ from string import Template
 startNum = 1100
 startNumDate = '2019-02-11'
 
-d1Num = 133
-d1Date = '2019-02-11'
+d1Num = 167
+d1Date = '2019-10-14'
 d1Cate = '看图说话'
 
-d2Num = 577
-d2Date = '2019-05-07'
+d2Num = 647
+d2Date = '2019-10-08'
 d2Cate = '与喵共舞'
 
-d3Num = 114
-d3Date = '2019-05-08'
+d3Num = 135
+d3Date = '2019-10-09'
 d3Cate = '黄金屋'
 
-d4Num = 112
-d4Date = '2019-05-16'
+d4Num = 122
+d4Date = '2019-10-10'
 d4Cate = '朝花夕拾'
-d4Num1 = 64
-d4Date1 = '2019-05-09'
+d4Num1 = 75
+d4Date1 = '2019-10-17'
 d4Cate1 = '读历史'
 
-d5Num = 54
-d5Date = '2019-05-11'
+d5Num = 74
+d5Date = '2019-10-11'
 d5Cate = '小学'
 
-d6Num = 575
-d6Date = '2019-05-04'
+d6Num = 648
+d6Date = '2019-10-12'
 d6Cate = '与喵共舞'
 
-d7Num = 576
-d7Date = '2019-05-05'
+d7Num = 649
+d7Date = '2019-10-13'
 d7Cate = '与喵共舞'
 
 
@@ -53,7 +53,7 @@ tpl_path_log_skip = tpl_path + os.path.sep + 'log_skip.tpl'
 
 
 output_path = file_parent_path + os.path.sep + 'output'
-output_path_art = output_path + os.path.sep + 'art'
+output_path_art = '/Users/zhuxu/Documents/mmjstool/momiaojushi'
 output_path_log = output_path + os.path.sep + 'log.md'
 output_path_log_workout = output_path + os.path.sep + 'log_workout.md'
 output_path_log_read = output_path + os.path.sep + 'log_read.md'
@@ -118,7 +118,8 @@ def makeArt(num, day, weekDay):
         cateNum = d7Num + int((day - datetime.datetime.strptime(d7Date, '%Y-%m-%d')).days / 7 ) * 3
         cateTitle = '周末活动'
 
-    tpl  = Template('${num}.${cate}${cateNum}~${cateTitle}')
+    name_date = day.strftime('%Y%m%d')
+    tpl  = Template('${num}.${cate}${cateNum}~*${cateTitle}')
     title = tpl.substitute(num = num, cate = cate, cateNum = math.floor(cateNum), cateTitle = cateTitle)
     print(title)
 
