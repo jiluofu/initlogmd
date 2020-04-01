@@ -21,12 +21,9 @@ d3Num = 150
 d3Date = '2020-02-26'
 d3Cate = '黄金屋'
 
-d4Num = 130
-d4Date = '2020-03-05'
-d4Cate = '朝花夕拾'
-d4Num1 = 82
-d4Date1 = '2020-02-27'
-d4Cate1 = '读历史'
+d4Num = 215
+d4Date = '2020-04-02'
+d4Cate = '杂谈'
 
 d5Num = 89
 d5Date = '2020-02-28'
@@ -100,12 +97,14 @@ def makeArt(num, day, weekDay):
         cateTitle = '《》'
     elif weekDay == 4:
 
-        if ((day - datetime.datetime.strptime(d4Date, '%Y-%m-%d')).days / 7) % 2 == 0:
-            cate = d4Cate
-            cateNum = d4Num + int((day - datetime.datetime.strptime(d4Date, '%Y-%m-%d')).days / 14)
-        else:
-            cate = d4Cate1
-            cateNum = d4Num1 + int((day - datetime.datetime.strptime(d4Date1, '%Y-%m-%d')).days / 14)
+        cate = d4Cate
+        cateNum = d4Num + int((day - datetime.datetime.strptime(d4Date, '%Y-%m-%d')).days / 7)
+        # if ((day - datetime.datetime.strptime(d4Date, '%Y-%m-%d')).days / 7) % 2 == 0:
+        #     cate = d4Cate
+        #     cateNum = d4Num + int((day - datetime.datetime.strptime(d4Date, '%Y-%m-%d')).days / 14)
+        # else:
+        #     cate = d4Cate1
+        #     cateNum = d4Num1 + int((day - datetime.datetime.strptime(d4Date1, '%Y-%m-%d')).days / 14)
     elif weekDay == 5:
         cate = d5Cate
         cateNum = d5Num + int((day - datetime.datetime.strptime(d5Date, '%Y-%m-%d')).days / 7)   
