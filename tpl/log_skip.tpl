@@ -1,1 +1,1 @@
-${day} | ${weekDay} | 晨跑1km<br>芭蕾基本功
+${day} | ${weekDay} | 晨练折返跑、跳绳跑<br>跳绳120，55
