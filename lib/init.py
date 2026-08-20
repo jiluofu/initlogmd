@@ -6,35 +6,35 @@ import math
 from string import Template
 
     
-startNum = 1841
-startNumDate = '2021-02-21'
+startNum = 3440
+startNumDate = '2025-08-25'
 
-d1Num = 372
-d1Date = '2024-04-08'
+d1Num = 469
+d1Date = '2026-07-20'
 d1Cate = '看图说话'
 
-d2Num = 1449
-d2Date = '2024-04-09'
+d2Num = 1837
+d2Date = '2026-07-21'
 d2Cate = '与喵共舞'
 
-d3Num = 440
-d3Date = '2024-04-10'
+d3Num = 542
+d3Date = '2026-07-22'
 d3Cate = '黄金屋'
 
-d4Num = 407
-d4Date = '2024-04-11'
+d4Num = 506
+d4Date = '2026-07-23'
 d4Cate = '杂谈'
 
-d5Num = 282
-d5Date = '2024-04-12'
-d5Cate = '小学'
+d5Num = 78 
+d5Date = '2026-07-24'
+d5Cate = '初中'
 
-d6Num = 1450
-d6Date = '2024-04-13'
+d6Num = 1838
+d6Date = '2026-07-25'
 d6Cate = '与喵共舞'
 
-d7Num = 1451
-d7Date = '2024-04-14'
+d7Num = 1839
+d7Date = '2026-07-26'
 d7Cate = '与喵共舞'
 
 
@@ -69,7 +69,7 @@ weekDayDict = {
 }
 
 tplKanTuShuoHua = '\n**拍摄时间：2018.12.17**\n\n**拍摄地点：**\n'
-tpl5Slogan = '\n***有的小朋友对我说不想上小学，因为乘法太难了，其实小学里有趣的事可多了，包括乘法在内。***\n'
+tpl5Slogan = '\n***如今已经没有什么难题了***\n'
 
 tplLogVipkid = '\n* vipkid'
 
